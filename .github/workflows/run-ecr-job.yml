@@ -9,17 +9,15 @@ jobs:
   run-ecr-job:
     runs-on: ubuntu-latest
     
+    container:
+      image: https://gallery.ecr.aws/f6e2z3b0/fornax-images
+    
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Pull Docker image from public ECR
-      run: |
-        docker pull public.ecr.aws/f6e2z3b0/fornax-images:base_image-latest
+    - name: print python
+      run: which python
 
-    - name: Run Python script inside Docker container
-      run: |
-        docker run --rm \
-          -v ${{ github.workspace }}:/workspace \
-          public.ecr.aws/f6e2z3b0/fornax-images:base_image-latest \
-          python /workspace/run.py
+    - name: Run Python script
+      run: python /github/workspace/run.py
