@@ -15,7 +15,7 @@ jobs:
 
     - name: Pull Docker image from public ECR
       run: |
-        docker pull public.ecr.aws/f6e2z3b0/fornax-images:base_image-latest
+        docker pull public.ecr.aws/f6e2z3b0/fornax-images:tractor-develop
     - name: Run Python script inside Docker container
       run: |
         docker run --rm --entrypoint /bin/bash \
