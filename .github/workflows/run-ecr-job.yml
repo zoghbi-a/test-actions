@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     
     container:
-      image: https://gallery.ecr.aws/f6e2z3b0/fornax-images
+      image: public.ecr.aws/f6e2z3b0/fornax-images:base_image-latest
     
     steps:
     - name: Checkout code
