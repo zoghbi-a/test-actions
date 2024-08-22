@@ -21,4 +21,4 @@ jobs:
         docker run --rm --entrypoint /bin/bash \
           -v ${{ github.workspace }}:/workspace \
           public.ecr.aws/f6e2z3b0/fornax-images:base_image-latest \
-          python run.py
+          -c "python run.py"
